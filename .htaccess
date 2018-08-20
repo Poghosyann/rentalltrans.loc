@@ -1,0 +1,27 @@
+Options +FollowSymlinks
+
+RewriteEngine On
+#RewriteCond !{HTTPS} off
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+RewriteCond %{REQUEST_URI} !^/(frontend/web|uploads|backend/web|admin-panel)
+RewriteRule (.*) /frontend/web/$1
+
+RewriteCond %{REQUEST_URI} ^/frontend/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /frontend/web/index.php
+
+RewriteCond %{REQUEST_URI} ^/admin-panel
+RewriteRule ^admin-panel\/?(.*) /backend/web/$1
+
+RewriteCond %{REQUEST_URI} ^/backend/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /backend/web/index.php
+
+RewriteRule ^uploads/(.*)$ common/web/uploads/$1 [L]
+
+php_value output_buffering 30000
