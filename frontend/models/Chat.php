@@ -277,6 +277,8 @@ class Chat extends ActiveRecord {
                 ];
         }
 
+        rsort($messages);
+        
         if ($messages){
             foreach ($messages as $chat_user) {
                 if($chat_user->id != Yii::$app->user->id){
