@@ -543,7 +543,7 @@ $(function () {
         var $footer = $('#footer');
         var y = $(document).scrollTop();
         var x = $footer.offset().top - window.innerHeight + $footer.height();
-        if(y >= x){
+        if(y >= x - 50){
             $('.toTheTop').addClass('active');
         }else {
             $('.toTheTop').removeClass('active');

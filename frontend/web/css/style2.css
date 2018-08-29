@@ -19,14 +19,21 @@ body {
     padding: 0;
 }
 
+@media (min-width: 1200px){
+    #main-nav .container {
+        padding-right: 70px;
+        position: relative;
+    }
+}
+
 section>.container{
     min-height: 630px;
-    padding-top: 50px;
+    padding-top: 15px;
 }
 .lang-div {
     position: absolute;
-    top: 25%;
-    right: 1%;
+    top: 12%;
+    right: 0;
     border-radius: 2px;
     width: 60px !important;
     background: #fff;
@@ -69,13 +76,13 @@ section>.container{
     color: gray;
 }
 .fix-search{
-    z-index:10;
+    z-index:1;
     height:100%;
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     padding-bottom: 30px;
 }
 .sidebar-body{
-    z-index:10;
+    z-index:1;
 }
 .fix-search.fix-search-catalog{
     margin-top: -15px;
@@ -203,6 +210,9 @@ section>.container{
 
 .filter_title{
     text-align: center !important;
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 5px;
 }
 
 .modal-content .choose-time .input-append.date .add-on i {
@@ -2699,7 +2709,7 @@ User pages
 .portlet-form.add-item-portlet-form,
 .edit-profile .portlet-form,
 .margin_bottom{
-    margin-bottom: 150px;
+    margin-bottom: 0px;
 }
 .portlet-form.sub-level {
     margin-top: 20px;
@@ -3054,7 +3064,7 @@ Responsive Styles
     }
 }
 #rek {
-    margin: 6.5% 0;
+    margin: 2.5% 0 120px 0;
 }
 @media only screen and (max-width: 992px) {
     #rek {
@@ -3243,8 +3253,13 @@ Responsive Styles
         padding: 5px 16px;
     }
     .toTheTop.active{
-        top: 75px;
+        bottom: 130px;
     }
+
+    .toTheTop.active.fix-search{
+        bottom: -58px;
+    }
+
     .toTheTop.active #chat-user{
         max-height: 250px;
     }
@@ -3977,6 +3992,11 @@ a.category-name {
 }
 
 @media only screen and (max-width: 992px){
+
+    section>.container{
+        padding-top: 70px;
+    }
+
     .add-items.sidebar-body{
         width: 240px;
     }
