@@ -25,10 +25,10 @@ $this->title = 'Edit Profile';
             </div>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3">
                 <?= LeftInfo::widget()?>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 clearfix">
+            <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 clearfix">
                 <div class="portlet-form">
                     <div class="caption-title">
                         <h4>Personal Information</h4>

@@ -3257,7 +3257,7 @@ Responsive Styles
     }
 
     .toTheTop.active.fix-search{
-        bottom: -58px;
+        bottom: 70px;
     }
 
     .toTheTop.active #chat-user{
