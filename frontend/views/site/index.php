@@ -38,19 +38,24 @@ $this->title = 'Rent All Trans';
 </section><!-- //Header -->
     <section class="container">
         <div id="rek" class="row">
+
+            <div class="rek col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+
             <!--this tree block -->
-            <div class="rek col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <div class="rek col-xs-12 col-sm-3 col-md-3 col-lg-3">
                 <a class="btn btn-blue" href="#">My voucher</a>
             </div>
 
-            <div class="rek col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <!--<div class="rek col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <a class="btn btn-blue" href="#">Change reservation</a>
-            </div>
+            </div>-->
 
-            <div class="rek col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <a class="btn btn-blue" href="#">Best price</a>
+            <div class="rek col-xs-12 col-sm-3 col-md-3 col-lg-3">
+                <a class="btn btn-blue" href="/browse/cars/3/3/<?php echo date("m-d-Y") ?>/<?php echo date("m-d-Y", strtotime("+1 day ".date("Y-m-d")."")) ?>/10/00/10/00">Best price</a>
             </div>
             <!--this tree block -->
+
+            <div class="rek col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
         </div>
     </section>
 <!-- //how it works -->

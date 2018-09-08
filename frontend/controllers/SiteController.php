@@ -257,7 +257,7 @@ class SiteController extends Controller
         $model->save();
 
         if (Yii::$app->user->login($model)){
-	        return $this->redirect('/');
+	        return $this->redirect('/user/edit-profile');
         }
 
         return $this->redirect('/login');

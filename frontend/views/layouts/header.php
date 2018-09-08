@@ -7,9 +7,12 @@
  */
 use frontend\models\Chat;
 use yii\bootstrap\Html;
+use common\models\User;
+
 $param = Yii::$app->params['header_menu'] ?? true;
 $chat_meassages = Chat::findOne(['user_id2' => Yii::$app->user->id,'status' => 'unread']);
 $back = Yii::$app->session->get('browse-url');
+$user = new User();
 
 ?>
 <header id="main-nav">
@@ -51,7 +54,9 @@ $back = Yii::$app->session->get('browse-url');
                         </li>
                         <li><?= Html::a(Html::tag('i','',['class' => 'fa fa-sign-out']). ' Log Out ', ['/site/logout'], ['data' => ['method' => 'post',]])?></li>
                     <?endif;?>
-                    <li><?= Html::a(Html::tag('i','',['class' => 'fa fa-plus']). ' Add ', [Yii::$app->user->isGuest ? '/login' : 'user/my-items/add-item' ])?></li>
+	                <?if (!Yii::$app->user->isGuest):?>
+                        <li><?= Html::a(Html::tag('i','',['class' => 'fa fa-plus']). 'Add',[!empty(Yii::$app->user->identity->cell_phone) && !empty(Yii::$app->user->identity->address_line_1) ? 'user/my-items/add-item' : '/user/edit-profile'], ['class' => 'btn btn-red'])?></li>
+	                <?endif;?>
                 <?endif;?>
             </ul>
 
@@ -112,7 +117,9 @@ $back = Yii::$app->session->get('browse-url');
                             </ul>
                         </li>
                     <?endif;?>
-                    <li><?= Html::a(Html::tag('i','',['class' => 'fa fa-plus']). 'Add', [Yii::$app->user->isGuest ? '/login' : 'user/my-items/add-item' ], ['class' => 'btn btn-red'])?></li>
+                    <?if (!Yii::$app->user->isGuest):?>
+                        <li><?= Html::a(Html::tag('i','',['class' => 'fa fa-plus']). 'Add',[!empty(Yii::$app->user->identity->cell_phone) && !empty(Yii::$app->user->identity->address_line_1) ? 'user/my-items/add-item' : '/user/edit-profile'], ['class' => 'btn btn-red'])?></li>
+                    <?endif;?>
                 <?endif;?>
             </ul>
         </div><!--/.nav-collapse -->

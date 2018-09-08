@@ -187,7 +187,7 @@ $this->title = 'RentAllTrans.com - ' . $item->id;
                         <div class="form-group-required">
 
                             <?= $form->field($model_rent_price,'checkbox')->checkbox(['uncheckValue' => null])
-                                ->label("<a  data-toggle=\"modal\" data-target=\"#myModal\">Site Terms</a>,
+                                ->label("Acquainted and agree <a  data-toggle=\"modal\" data-target=\"#myModal\">Site Terms</a>,
                                                <a  data-toggle=\"modal\" data-target=\"#modal-privacy-policy\">Privacy Policy</a>")?>
 
                         </div>

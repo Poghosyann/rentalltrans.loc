@@ -108,7 +108,6 @@ class ItemController extends AuthController
             $sort = SORT_DESC;
         }
 
-
         $pageSize = Setting::findOne(2)->value;
 
         $query = $item;
@@ -170,7 +169,7 @@ class ItemController extends AuthController
 
             Yii::$app->session->setFlash('success', 'Item has been saved as draft.');
 
-            return $this->redirect(['update', 'id' => $model->id, 'category_id' => $model->category_id]);
+            return $this->redirect(['/user/my-items', 'id' => $model->id, 'category_id' => $model->category_id]);
         } else {
             return $this->render('create', [
                 'model' => $model,

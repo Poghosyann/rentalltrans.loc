@@ -38,20 +38,20 @@ $this->title = 'Edit Profile';
                         <div class="caption-body">
                             <div class="row">
                                 <div class="col-md-7">
-                                    <div class="form-group">
+                                    <!--<div class="form-group">
                                         <div class="fileinput fileinput-new" data-provides="fileinput">
                                             <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 199px; height: 199px;">
-                                                <img data-src="holder.js/100%x100%" alt="100%x100%" src="<?= $model->image ? '/uploads/users/115-115/'.$model->image : '/images/fa-camera.png'?>" style="height: 100%; width: 100%; display: block;">
+                                                <img data-src="holder.js/100%x100%" alt="100%x100%" src="<?/*= $model->image ? '/uploads/users/115-115/'.$model->image : '/images/fa-camera.png'*/?>" style="height: 100%; width: 100%; display: block;">
                                             </div>
                                             <div>
-                                                <?= $form->field($model, 'image')->fileInput()->label(false) ?>
+                                                <?/*= $form->field($model, 'image')->fileInput()->label(false) */?>
                                                 <a href="#" class="fileinput-exists" data-dismiss="fileinput"><i class="fa fa-close"></i></a>
                                             </div>
                                         </div>
                                         <div class="image-buttons-other">
                                             <a href="javascript:" id="uploads">Change Image</a><span> (i.e. .jpg or .png)</span>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <div class="form-group">
                                         <?= $form->field($model, 'first_name', [
                                             'template' => '<label class="">First Name <span class="required" aria-required="true"> * </span></label>{input}',
@@ -130,14 +130,14 @@ $this->title = 'Edit Profile';
 
                                     <div class="form-group">
                                         <?= $form->field($model, 'cell_phone', [
-                                            'template' => '<label class="">Cellphone (e.g. 123-456-7890) <span class="required" aria-required="true"> * </span></label>{input}',
+                                            'template' => '<label class="">Cellphone (e.g. +123-456-7890) <span class="required" aria-required="true"> * </span></label>{input}',
                                         ])->textInput([
                                                 'class' => 'form-control',
                                             ])->label(false);?>
                                     </div>
                                     <div class="form-group">
                                         <?= $form->field($model, 'other_phone', [
-                                            'template' => '<label class="">Other Phone (e.g. 123-456-7890) </label>{input}',
+                                            'template' => '<label class="">Other Phone (e.g. +123-456-7890) </label>{input}',
                                         ])->textInput([
                                             'class' => 'form-control',
                                         ])->label(false);?>

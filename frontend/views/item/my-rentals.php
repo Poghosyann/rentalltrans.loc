@@ -72,9 +72,11 @@ $this->title = 'RentAllTrans.com';
                             <div class="panel profile-widget">
                                 <!--this cols -->
                                 <div class="col-sm-3 col-md-3 col-lg-3 col-xs-12">
-                                    <div class="bg-img">
-                                        <img src="<?= "/uploads/items/".$item->id.'/'.$item->images[0]->path?>">
-                                    </div>
+                                    <?if(isset($item->image->path)):?>
+                                        <div class="bg-img">
+                                            <img src="<?= "/uploads/items/".$item->id.'/'.$item->images[0]->path?>">
+                                        </div>
+                                    <?endif;?>
                                     <div class="brand-logo">
                                         <img src="<?= $item->user->image ? '/uploads/users/115-115/'.$item->user->image : '/images/default.jpg'?>">
                                     </div>

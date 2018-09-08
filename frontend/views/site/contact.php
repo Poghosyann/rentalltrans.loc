@@ -11,15 +11,13 @@ use yii\captcha\Captcha;
 $this->title = 'Contact';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<section id="header-contact" style="background-image: url(<?= $page->image?>)">
-    <div class="container">
+    <div class="container" id="header-contact">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h2 class="wow fadeInUp animated">Have questions, comments or concerns - we'd love to hear from you!</h2>
+                <h2 class="wow fadeInUp animated" style="color: #1a2226">Have questions, comments or concerns - we'd love to hear from you!</h2>
             </div>
         </div>
     </div>
-</section><!-- //Header -->
 <div class="site-contact">
     <div class="container">
         <div class="col-md-offset-1 col-md-10">
@@ -39,6 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?= $form->field($model, 'email')->textInput(['autofocus' => true, 'placeholder' => 'Your Email'])->label(false) ?>
 
                             <?= $form->field($model, 'type')->dropDownList([
+                                '' => 'Choose subject',
                                 'Listing an Item' => 'Listing an Item',
                                 'Renting an Item' => 'Renting an Item',
                                 'My Account'=>'My Account',

@@ -2,8 +2,6 @@ $(document).ready(function() {
 
     $('.insurance input[type=radio]').change(function() {
 
-
-
         if (this.value == 0) {
             var price = $(this).data('deposite');
             $("#item-deposit").val(price);
@@ -32,11 +30,9 @@ $(document).ready(function() {
 			$('#slide-out-menu').removeClass('scrolled');
 		}
 
-
 		//Scroll Effects
 
 	});
-
 
 	// Navigation
 	$('#navigation').on('click', function(e){
@@ -103,7 +99,6 @@ $(document).ready(function() {
             );
         }
 
-
         return $state;
     }
 
@@ -154,7 +149,6 @@ $(document).ready(function() {
                 }
             },
             {
-
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 2,

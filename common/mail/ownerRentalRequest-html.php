@@ -34,7 +34,8 @@ use app\models\Order;
         <p>Место и время возврата транспорта: Ереван / офис Рент Транс; 10:00  <?= $order->to ?></p><hr>
 
         <p>Поставщик транспорта: <?= $order->itemUser->first_name ?></p><hr>
-	    <?php
+
+        <?php
 	    $datetime1 = new DateTime($order->from);
 	    $datetime2 = new DateTime($order->to);
 	    $days = $datetime1->diff($datetime2)->d;
@@ -45,22 +46,13 @@ use app\models\Order;
 		    $casco =  ($order->item->car_price * 0.08)/100;
 	    }
 
-	    foreach ($results_product_item as $result_product){
-		    if($result_product['id'] == 10){
-			    $price = $casco * $days;
-		    }
-		    else{
-			    $price = $result_product['price'] * $days;
-		    }
-		    echo '<p> '.$result_product['name'].' <span style="float: right">включая налоги AMD '.$price.'</span></p><hr>';
-	    }
-
 	    $order_service_price = ($order->service_price * $days);
 	    $order_rental_price = $order->rental_price;
 	    $order_total_price = ($order_service_price + $order_rental_price);
 	    ?>
-        <p>Платеж:                                 <span style="float: right">включая налоги AMD <?= $order_total_price ?></span></p><hr>
-        <p>Сумма депозита:                         <span style="float: right">включая налоги AMD <?php echo ($casco_insurance_price) ? $order->item->deposit : 600000 ?></span></p>
+        <p>CASCO insurance: <span style="float: right">включая налоги AMD <?= $casco ?></span></p><hr>
+        <p>Цена транспорта: <span style="float: right">включая налоги AMD <?= $order->item->car_price ?></span></p><hr>
+        <p>Сумма депозита:  <span style="float: right">включая налоги AMD <?php echo ($casco_insurance_price) ? $order->item->deposit : 600000; ?></span></p>
     </div>
     <div>
         <p>С Уважениям,</p>

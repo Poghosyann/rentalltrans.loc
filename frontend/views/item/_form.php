@@ -173,33 +173,34 @@ use yii\widgets\ActiveForm;
                         <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
 
-                        <div class="form-group">
+                        <!--<div class="form-group">
                             <label class="control-label">
                                 Images
                                 <span class="required" aria-required="true"> * </span>
                             </label>
                             <div class="images-container clearfix">
-                                <?for($i = 0; $i < Setting::findOne(5)->value ?? 5; $i++):?>
+                                <?/*for($i = 0; $i < Setting::findOne(5)->value ?? 5; $i++):*/?>
                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                         <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 109px; height: 111px;">
-                                            <?= Html::img(isset($model->images[$i]) ? "/uploads/items/".$model->id.'/'.$model->images[$i]->path : '/images/fa-camera.png',[
+                                            <?/*= Html::img(isset($model->images[$i]) ? "/uploads/items/".$model->id.'/'.$model->images[$i]->path : '/images/fa-camera.png',[
                                                 'data-src' => 'holder.js/100%x100%',
                                                 'alt' => '100%x100%',
                                                 'height' => '100%',
                                                 'width' => '100%',
                                                 'style' => 'display: block',
-                                            ])?>
+                                            ])*/?>
                                         </div>
                                         <div>
-                                            <?= $form->field($model, 'image[]')->fileInput()->label(false) ?>
-                                            <?= Html::a(Html::tag('i', '', ['class' => 'fa fa-close']), '#',
+                                            <?/*= $form->field($model, 'image[]')->fileInput()->label(false) */?>
+                                            <?/*= Html::a(Html::tag('i', '', ['class' => 'fa fa-close']), '#',
                                                 ['data-dismiss' => 'fileinput','data-id' => $model->images[$i]->id, 'class' => 'fileinput-exists remove', 'style' => isset($model->images[$i]) ? 'display:block' : ''])
-                                            ?>
+                                            */?>
                                         </div>
                                     </div>
-                                <?endfor;?>
+                                <?/*endfor;*/?>
                             </div>
-                        </div>
+                        </div>-->
+
                         <!--this form group-->
                         <div class="form-group insurance">
                             <p>Insurance <span class="required" aria-required="true"> * </span></p>

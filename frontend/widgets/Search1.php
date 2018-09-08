@@ -21,7 +21,6 @@ class Search1 extends Widget {
         parent::init();
     }
 
-
     public function run() {
 
         $categories = Category::find()->where(['status' => 1])->orderBy(['order' => SORT_ASC])->all();

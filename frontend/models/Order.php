@@ -184,7 +184,7 @@ class Order extends ActiveRecord
                 'text' => 'passwordResetToken-text',
             ])
             ->setFrom([Yii::$app->params['supportEmail'] => 'Rent All Trans'])
-            ->setTo($order->user->email)
+            ->setTo(array($order->user->email, 'info@rentalltrans.com'))
             ->setSubject('Your rental request has been approved')  //clientin accepti jamanak
             ->send();
 

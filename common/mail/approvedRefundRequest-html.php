@@ -36,6 +36,7 @@ use app\models\Order;
 
 		<p>Поставщик транспорта: <?= $order->itemUser->first_name ?></p><hr>
 
+        <p>Цена транспорта: <span style="float: right"> AMD <?= $order->item->car_price ?></span></p>
 		<?php
             $datetime1 = new DateTime($order->from);
             $datetime2 = new DateTime($order->to);

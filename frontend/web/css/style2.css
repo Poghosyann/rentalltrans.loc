@@ -2957,17 +2957,6 @@ Signin/Login
 /*****************************************************
 Contact Pages Styles
 *****************************************************/
-#header-contact {
-    padding: 66px 0 155px;
-    /*background-image: url(../images/banner-bg.jpg);*/
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-    overflow: hidden;
-    color: #fff;
-    min-height: 538px;
-}
 
 #header-contact h2 {
     margin-top: 145px;
@@ -3266,12 +3255,12 @@ Responsive Styles
     #footer{
         position: static;
     }
-    body.company-team #footer,
+    /*body.company-team #footer,
     body.forgot-password #footer,
     body.login #footer,
     body.about-us #footer{
         position: absolute;
-    }
+    }*/
     .sidebar-body ul li {
         padding: 10px 0 10px;
     }

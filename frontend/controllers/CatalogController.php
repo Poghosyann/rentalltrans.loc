@@ -48,33 +48,30 @@ class CatalogController extends Controller{
         return parent::beforeAction($action);
     }
 
-    /**
-     * @param $category
-     * @param $location_from
-     * @param $location_to
-     * @param $from
-     * @param $to
-     * @return string
-     * @throws NotFoundHttpException
-     */
-    public function actionIndex($category, $location_from, $location_to, $from, $to,$from_h,$from_i, $to_h, $to_i, $price = null, $user = null, $class = null, $marka = null, $model = null)
+
+	/**
+	 * @param $category
+	 * @param $location_from
+	 * @param $location_to
+	 * @param $from
+	 * @param $to
+	 * @param $from_h
+	 * @param $from_i
+	 * @param $to_h
+	 * @param $to_i
+	 * @param null $price
+	 * @param null $user
+	 * @param null $class
+	 * @param null $marka
+	 * @param null $model
+	 * @return string
+	 * @throws NotFoundHttpException
+	 */
+	public function actionIndex($category, $location_from, $location_to, $from, $to, $from_h, $from_i, $to_h, $to_i, $price = null, $user = null, $class = null, $marka = null, $model = null)
     {
 	    Yii::$app->db->createCommand(
 		    "SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));"
 	    );
-
-	    /*$results_company = Yii::$app->db->createCommand(
-		    "SELECT * FROM `order_has_company_product` WHERE `order_id`= 160;"
-	    )->queryAll();
-
-            foreach ($results_company as $result_company){
-	            $result_product = Yii::$app->db->createCommand(
-		            "SELECT * FROM `company_product` WHERE `id`= ".$result_company['company_product_id'].";"
-	            )->queryOne();
-
-	            echo '<p> '.$result_product['name'].' <span style="float: right">включая налоги AMD '.$result_product['price'].'</span></p><hr>';
-            }*/
-
 
         $from = str_replace('-', '/', $from);
         $to = str_replace('-', '/', $to);
@@ -126,7 +123,7 @@ class CatalogController extends Controller{
                 throw new NotFoundHttpException('The requested page does not exist.');
             }
         }elseif(!empty($user_item) ){
-            $item = $item->andWhere(['user_id' => $user_item->id]);
+            $item = $item->andWhere(['item.user_id' => $user_item->id]);
         }
 
         if(empty($class_item) && ($class != '-')) {
